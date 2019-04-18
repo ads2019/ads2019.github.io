@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>这是一个测试页面</title>
+		<script src="jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			html {
+				-ms-touch-action: none;
+			}
+			body,dl,dd,ul,ol,p{ margin: 0;}
+			html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {-webkit-text-size-adjust:none;}
+			body{
+				width: 100%;
+				overflow-x: hidden;
+				font-size: 14px;
+				padding-bottom: 0.2rem;
+				/*font-family: "黑体";*/
+			}
+			ul,ol{ padding: 0;}
+			li{ list-style: none;}
+			a{
+				text-decoration: none;
+			}
+			.col-red{
+				color: #FF0000;
+			}
+			.pst-rel{
+				position: relative;
+			}
+			.font12{
+				font-size: 12px;
+			}
+			.col888{
+				color: #888;
+			}
+			.wid100{
+				width: 100px;
+			}
+			.wid150{
+				width: 150px;
+			}
+			.wid200{
+				width: 200px;
+			}
+			.hit18{
+				height: 18px;
+			}
+			.mglf10{
+				margin-left: 10px;
+			}
+			.mglf30{
+				margin-left: 30px;
+			}
+			.mglf50{
+				margin-left: 50px;
+			}
+			.font-bold{
+				font-weight: bold;
+				font-size: 18px;
+			}
+			.hid{
+				display: none;
+			}
+			.gray{
+				background-color: #888888;
+			}
+			
+			#paySetmealDetails{
+				width: 100%;
+				height: 100%;
+			}
+			header{
+				width: 100%;
+				height: 50px;
+				border-bottom: 1px solid #CCCCCC;
+			}
+			header>p,.adEssentialInfm>p{
+				height: 50px;
+				line-height: 50px;
+				font-size: 16px;
+				padding-left: 20px;
+			}
+			.adEssentialInfm{
+				min-width: 780px;
+			}
+			.adEssentialInfm>div{
+				margin-left: 40px;
+				margin-bottom: 15px;
+			}
+			.imgsize>img{
+				width: 230px;
+				vertical-align: top;
+			}
+			.effectPreview{
+				width: 100vw;
+				height: 100vh;
+				background: rgba(0,0,0,0.5);
+				position: fixed;
+				top: 0;
+				left: 0;
+				text-align: center;
+				
+			}
+			.effectPreview>div{
+				width: 400px;
+				position: relative;
+				margin: 0 auto;
+				margin-top: 100px;
+			}
+			.effectPreview>div>img{
+				width: 100%;
+			}
+			.effectPreview>div>p{
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				background-color: #FAFAFA;
+				border-radius: 50px;
+				width: 15px;
+				height: 15px;
+				line-height: 15px;
+				text-align: center;
+				cursor: pointer;
+			}
+			.vbtm{
+				font-size: 18px;
+				font-weight: bold;
+				color: #00A1FF;
+				vertical-align: bottom;
+				cursor: pointer;
+			}
+			.sbtn{
+				position: absolute;
+				top: 5px;
+				right: 10px;
+				display: inline-block;
+			}
+			.sbtn>a{
+				width: 50px;
+				padding: 5px 10px;
+				border: 1px solid #666666;
+				cursor: pointer;
+			}
+			.adlj{
+				display: inline-block;
+				width: 350px;
+				word-wrap: break-word;
+				vertical-align: top;
+				border: 1px solid #EEEEEE;
+				padding-left: 10px;
+			}
+			.adQualifications{
+				display: inline-block;
+				vertical-align: top;
+				/*width: 350px;
+				height: 200px;
+				border: 1px solid #EEEEEE;*/
+			}
+			.adQualifications>input{
+				margin-bottom: 8px;
+				width: 300px;
+				height: 30px;
+			}
+			.showMore{
+				width: 95%;
+				text-align: right;
+			}
+			.showMore>a{
+				display: inline-block;
+				width: 80px;
+				height: 50px;
+				line-height: 50px;
+				font-size: 18px;
+				font-weight: bold;
+				cursor: pointer;
+			}
+			.adEsMore>div{
+				margin-left: 0;
+			}
+			.adEsMore>div>div{
+				display: inline-block;
+			}
+			.dataOverview{
+				margin-top: 20px;
+			}
+			.searchd{
+				display: inline-block;
+				width: 80px;
+				height: 25px;
+				line-height: 25px;
+				text-align: center;
+				color: #FFFFFF;
+				background-color: #00A1FF;
+				cursor: pointer;
+			}
+			.dataThree{
+				width: 95%;
+				min-width: 780px;
+				height: 110px;
+				border: 1px solid #333;
+				margin: 15px auto;
+			}
+			.dataThree>div{
+				display: inline-block;
+				width: 32%;
+				height: 100%;
+			}
+			.lftbor{
+				display: inline-block;
+				border-left: 1px solid #333;
+				height: 90px;
+				line-height: 90px;
+				margin-top: 10px;
+				vertical-align: top;
+			}
+			.dataThree>div>p{
+				line-height: 50px;
+				font-size: 18px;
+				text-align: center;
+			}
+			.listTable{
+				width: 95%;
+				min-width: 780px;
+				border-top: 1px solid #333;
+				font-size: 16px;
+				margin: 20px auto;
+				position: relative;
+			}
+			.listTable>p{
+				height: 50px;
+				line-height: 50px;
+				background: #999999;
+				border-left: 1px solid #333;
+				border-right: 1px solid #333;
+			}
+			.btnData{
+				padding: 3px 8px;
+				margin-left: 10px;
+				cursor: pointer;
+			}
+			.btnLoad{
+				position: absolute;
+				top: 0px;
+				right: 20px;
+				cursor: pointer;
+			}
+			.tableList{
+				text-align: center;
+				width: 100%;
+			}
+			.table-style{
+				display: inline-block;
+				width: 100%;
+			}
+			.table-style>thead>tr>th{
+				background: #999999;
+			}
+			.table-style>thead>tr>th,.table-style>tbody>tr>td{
+				border: 1px solid #333;
+				text-align: center;
+				line-height: 40px;
+			}
+			.table-style th{
+				width: 15%;
+			}
+			.table-style th:nth-of-type(1){
+				width: 230px;
+			}
+			.adbtn{
+				width: 100%;
+				line-height: 80px;
+				margin: 30px auto;
+				text-align: center;
+			}
+			.adbtn>a{
+				display: inline-block;
+				width: 60px;
+				height: 10px;
+				line-height: 10px;
+				padding: 10px 20px;
+				text-align: center;
+				border: 1px solid #CCCCCC;
+				color: #333333;
+			}
+			.adbtn>a:hover{
+				cursor: pointer;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="paySetmealDetails">
+			<header>
+				<p>这是一个测试页面</p>
+			</header>
+			<div class="adEssentialInfm pst-rel">
+				<p>广告基本信息</p>
+				<div>
+					<span>广告价格:</span>&nbsp;&nbsp;&nbsp;<label><span>2000</span>元</label>
+				</div>
+				<div>
+					<span>广告资源:</span>&nbsp;&nbsp;&nbsp;<label>签购单信息流广告</label>
+				</div>
+				<div>
+					<span>广告状态:</span>&nbsp;&nbsp;&nbsp;<label class="col-red">审核中</label>
+				</div>
+				<div>
+					<span>图片尺寸:</span>&nbsp;&nbsp;&nbsp;<label>690*230</label>
+				</div>
+				<div class="pst-rel">
+					<span>广告图片:</span>&nbsp;&nbsp;&nbsp;
+					<label class="imgsize">
+						<img src="img/2.jpg.jpg" />&nbsp;&nbsp;&nbsp;
+						<a class="vbtm" onclick="imgShowing()">效果预览</a>
+						<span class="sbtn">
+							<a>电脑上传</a>
+							<a>图片库上传</a>
+						</span>
+					</label>
+					<div class="effectPreview hid">
+						<div>
+							<img src="img/2.jpg.jpg" />
+							<p onclick="imghiding()">x</p>
+						</div>
+					</div>
+				</div>
+				<div>
+					<span>广告链接:</span>&nbsp;&nbsp;&nbsp;<p class="adlj">www.chinaums.com</p>
+				</div>
+				<div>
+					<span>关联广告主资质:</span>&nbsp;&nbsp;&nbsp;
+					<div class="adQualifications">
+						<!--振武说之前有成型的模板-->
+						<input type="text" placeholder="请选择广告主资质" /><br />
+						<input type="text" placeholder="搜索" /><br />
+						<input type="text" placeholder="化妆品类广告资质" /><br />
+					</div>
+				</div>
+				<div class="adEssentialInfm adEsMore hid">
+					<div>
+						<span>广告投放地域:</span>&nbsp;&nbsp;&nbsp;
+						<div>
+							<input type="radio" name="adpro" /> <span>全国</span>
+							<input type="radio" name="adpro" /> <span>选择省市</span>
+							<div>
+								<!--选择省市时内容-->
+							</div>
+						</div>
+					</div>
+					<div>
+						<span>广告起始日期:</span>&nbsp;&nbsp;&nbsp;<label><input type="text" class="wid150" /></label>
+					</div>
+					<div>
+						<span>广告生效日期:</span>&nbsp;&nbsp;&nbsp;<label><input type="text" class="wid150" />&nbsp;&nbsp;至&nbsp;&nbsp;<input type="text" class="wid150" /></label>
+					</div>
+					<div>
+						<span>广告单价:</span>&nbsp;&nbsp;&nbsp;<label><input type="text" class="wid100 mglf30" />&nbsp;&nbsp;<span class="font12 col888">元/千次展</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="font12 col888">注：广告单价范围50~200, 通过竞价决定是否广告投放成功</span></label>
+					</div>
+					<div>
+						<span>广告投放量:</span>&nbsp;&nbsp;&nbsp;<label><input type="text" class="wid150 mglf10" />&nbsp;&nbsp;<span class="font12 col888">千次</span></label>
+					</div>
+				</div>
+				<div class="hidShow" onclick="hidShow()">
+					<p class="showMore"><a>查看更多</a></p>
+					<p class="showMore hid"><a>收起</a></p>
+				</div>
+				<p>广告数据效果</p>
+				<div>
+					<p>数据概览</p>
+					<div class="dataOverview">
+						<div>
+							<input type="text" class="wid100 hit18" /> 至 <input type="text" class="wid100 hit18" /> <a class="searchd">查询</a>
+						</div>
+						<div class="dataThree">
+							<div>
+								<p>余额&nbsp;(元)</p>
+								<p>320</p>
+							</div>
+							<span class="lftbor"></span>
+							<div>
+								<p>曝光量&nbsp;(次)</p>
+								<p>100000</p>
+							</div>
+							<span class="lftbor"></span>
+							<div>
+								<p>互动量&nbsp;(次)</p>
+								<p>100000</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="listTable">
+						<p>
+							<a class="btnData">数据明细</a>
+							<a class="btnLoad">下载明细</a>
+						</p>
+						<div class="tableList">
+							<table class="table-style" border="0" cellspacing="0">
+								<thead>
+									<tr>
+										<th>日期</th>
+										<th>曝光量</th>
+										<th>互动量</th>
+										<th>互动率</th>
+										<th>单价</th>
+										<th>当日消耗金额</th>
+										<th>当日余额</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>2018.10.11</td>
+										<td>100000</td>
+										<td>1000</td>
+										<td>1%</td>
+										<td>100</td>
+										<td>1000</td>
+										<td>100</td>
+									</tr>
+									<tr>
+										<td>2018.10.11</td>
+										<td>100000</td>
+										<td>1000</td>
+										<td>1%</td>
+										<td>100</td>
+										<td>1000</td>
+										<td>100</td>
+									</tr>
+									<tr>
+										<td>2018.10.11</td>
+										<td>100000</td>
+										<td>1000</td>
+										<td>1%</td>
+										<td>100</td>
+										<td>1000</td>
+										<td>100</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="adbtn">
+						<a href="cptc1.html">返回</a>
+						<a href="###" class="mglf50">保存</a>
+					</div>
+				</div>
+				<div>
+					<p class="font-bold">业务热线:&nbsp;&nbsp;&nbsp;&nbsp;95534</p>
+				</div>
+			</div>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		function hidShow(){
+			$(".adEsMore").toggle();
+			$(".hidShow>p").toggle()
+		}
+		function imgShowing(){
+			$(".effectPreview").show();
+		}
+		function imghiding(){
+			$(".effectPreview").hide();
+		}
+	</script>
+</html>

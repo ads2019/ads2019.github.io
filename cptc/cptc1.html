@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>这是一个测试页面</title>
+		
+		<style type="text/css">
+			*{
+				/*解决点击出现蓝背景问题*/
+				-webkit-tap-highlight-color: transparent;
+				-webkit-appearance: none; 
+			}
+			html {
+				-ms-touch-action: none;
+			}
+			body,dl,dd,ul,ol,p{ margin: 0;}
+			html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {-webkit-text-size-adjust:none;}
+			body{
+				width: 100%;
+				overflow-x: hidden;
+				font-size: 12px;
+				padding-bottom: 0.2rem;
+				/*font-family: "黑体";*/
+			}
+			ul,ol{ padding: 0;}
+			li{ list-style: none;}
+			a{
+				text-decoration: none;
+			}
+			
+			#adSetmeal{
+				width: 100%;
+				height: 100%;
+			}
+			header{
+				width: 100%;
+				height: 50px;
+				border-bottom: 1px solid #CCCCCC;
+			}
+			header>p{
+				height: 50px;
+				line-height: 50px;
+				font-size: 16px;
+				padding-left: 20px;
+			}
+			.smPattern,.smFinish{
+				width: 100%;
+			}
+			.smPattern>p,.smFinish>p{
+				font-size: 14px;
+				margin-top: 30px;
+				padding-left: 25px;
+				margin-bottom: 20px;
+			}
+			.pattern,.finish{
+				margin-left: 100px;
+			}
+			.ptn,.fns{
+				display: inline-block;
+				width: 200px;
+				border: 1px solid #CCCCCC;
+				border-radius: 5px;
+				margin-right: 20px;
+				margin-bottom: 20px;
+				padding: 5px;
+				
+			}
+			.ptn>div{
+				width: 100px;
+				text-align: center;
+				border: 1px solid #CCCCCC;
+				margin: 10px auto;
+				padding: 20px 10px;
+			}
+			.ptn>a{
+				display: inline-block;
+				width: 190px;
+				text-align: right;
+				cursor: pointer;
+			}
+			.fns>img{
+				width: 100%;
+			}
+			.fns>div{
+				display: inline-block;
+				width: 95px;
+				text-align: center;
+				margin-top: 5px;
+				margin-bottom: 5px;
+			}
+			.fns>span{
+				display: inline-block;
+				width: 80px;
+				padding-left: 10px;
+			}
+			.fns>a{
+				display: inline-block;
+				width: 90px;
+				text-align: right;
+				cursor: pointer;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="adSetmeal">
+			<header>
+				<p>这是一个测试页面</p>
+			</header>
+			<div class="smPattern">
+				<p>套餐模式</p>
+				<div class="pattern">
+					<div class="ptn">
+						<p>套餐一</p>
+						<div><span>500</span>元</div>
+						<a href="cptc2.html">详情</a>
+					</div>
+					<div class="ptn">
+						<p>套餐一</p>
+						<div><span>1000</span>元</div>
+						<a href="cptc2.html">详情</a>
+					</div>
+					<div class="ptn">
+						<p>套餐一</p>
+						<div><span>2000</span>元</div>
+						<a href="cptc2.html">详情</a>
+					</div>
+				</div>
+			</div>
+			<div class="smFinish">
+				<p>已购买套餐</p>
+				<div class="finish">
+					<div class="fns">
+						<img src="img/1.jpg.jpg" />
+						<div>
+							<p>500000</p>
+							<p>曝光量</p>
+						</div>
+						<div>
+							<p>500000</p>
+							<p>互动量</p>
+						</div>
+						<span>投放中</span>
+						<a href="cptc3.html">详情</a>
+					</div>
+					<div class="fns">
+						<img src="img/2.jpg.jpg" />
+						<div>
+							<p>500000</p>
+							<p>曝光量</p>
+						</div>
+						<div>
+							<p>500000</p>
+							<p>互动量</p>
+						</div>
+						<span>待投放</span>
+						<a href="cptc3.html">详情</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
